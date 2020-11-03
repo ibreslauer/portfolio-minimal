@@ -1,48 +1,39 @@
-const main = {
-  name: 'Your Name',
-  mail: 'your.mail@gmail.com',
-  img: 'https://organicthemes.com/demo/profile/files/2018/05/profile-pic.jpg',
+const data = {
+  name: 'Ivan Breslauer',
+  mail: 'ivan.breslauer@gmail.com',
+  img: 'ivan.jpg',
   role: ['Full Stack Developer'],
-  // Refer https://ionicons.com/ and put the icon name inside iconName key
+  // icon names from https://ionicons.com/
   connects: [
     {
-      name: 'Home',
-      iconName: 'logo-firefox',
-      link: 'https://sivanesh-s.github.io'
+      name: 'Linkedin',
+      iconName: 'logo-linkedin',
+      link: 'https://www.linkedin.com/in/ivan-breslauer/'
     },
     {
       name: 'Github',
       iconName: 'logo-github',
-      link: 'https://github.com/sivanesh-s'
+      link: 'https://github.com/ibreslauer/'
     },
     {
-      name: 'Linkedin',
-      iconName: 'logo-linkedin',
-      link: 'https://www.linkedin.com/in/sivanesh-shanmugam/'
+      name: 'nuget',
+      iconName: 'code-download-outline',
+      link: 'https://www.nuget.org/profiles/IvanBreslauer'
     },
     {
       name: 'StackOverflow',
       iconName: 'logo-stackoverflow',
-      link: 'https://stackoverflow.com/users/6940525/sivanesh-s'
-    },
-    {
-      name: 'Twitter',
-      iconName: 'logo-twitter',
-      link: 'https://twitter.com/sivanesh_fiz'
-    },
-    {
-      name: 'npm',
-      iconName: 'logo-npm',
-      link: 'https://www.npmjs.com/~sivanesh_s'
+      link: 'https://stackoverflow.com/users/4866473/ivan-breslauer'
     },
     {
       name: 'Mail',
       iconName: 'mail-outline',
-      link: `mailto:${'yourmail@gmail.com'}?Subject=Hello%20again`
+      link: `mailto:${'ivan.breslauer@gmail.com'}?Subject=Hello%20Ivan!`
     }
   ],
   links: [
-    { name: 'Projects', link: '#projects' },
-    { name: 'Blogs', link: '#blogs' }
-  ]
-};
+    { name: 'Blog', link: 'https://medium.com/@ivan.breslauer' }
+  ],
+}
+
+export default data

@@ -1,12 +1,14 @@
+import data from './data.js';
+
 const getDOM = selector => () => {
   return document.querySelector(selector);
 };
 
-document.title = `${main.name} | ${main.role}`
+document.title = `${data.name} | ${data.role}`
 
 // Values DOM nodes
 const dom = {
-  main: {
+  data: {
     name: getDOM('#main #name'),
     mail: getDOM('#main #mail'),
     img: getDOM('#main #img'),
@@ -19,7 +21,7 @@ const dom = {
 };
 
 function assignDOM(dom, value, options) {
-  console.log('dom, value, img:', dom, value, img);
+  // console.log('dom, value, img:', dom, value, img);
 
   if (options && options.isImg) {
     dom.src = value;
@@ -33,25 +35,22 @@ function assignDOM(dom, value, options) {
   dom.innerHTML = value;
 }
 
-// Assigning
+// DATA
 
-// MAIN
-
-assignDOM(dom.main.name(), main.name);
-assignDOM(dom.main.mail(), main.mail);
-dom.main.mail().href = `mailto:${main.mail}?Subject=Hello%20again`;
-assignDOM(dom.main.img(), main.img, { isImg: true });
-assignDOM(dom.main.role(), main.role);
-// assignDOM(dom.main.links(), main.links)
+assignDOM(dom.data.name(), data.name);
+assignDOM(dom.data.mail(), data.mail);
+dom.data.mail().href = `mailto:${data.mail}?Subject=Hello%20Ivan!`;
+assignDOM(dom.data.img(), data.img, { isImg: true });
+assignDOM(dom.data.role(), data.role);
 
 // External Links (ICONS)
-const connectsDOM = main.connects
+const connectsDOM = data.connects
   .map(
     ({ name, iconName, link }) =>
       `<a href=${link} target="_blank"><ion-icon name="${iconName}" title="${name}"></ion-icon></a>`
   )
   .join('\n');
-assignDOM(dom.main.connects(), connectsDOM);
+assignDOM(dom.data.connects(), connectsDOM);
 
 // Internal Links
 const getLinks = links =>
@@ -59,5 +58,5 @@ const getLinks = links =>
     .map(({ name, link }) => `<a href="${link}" class="text-pink-500" >${name}</a>`)
     .map((link, index, links) => index === links.length - 1 ? link: `${link} - `)
     .join('\n');
-assignDOM(dom.main.links(), getLinks(main.links));
+assignDOM(dom.data.links(), getLinks(data.links));
 
