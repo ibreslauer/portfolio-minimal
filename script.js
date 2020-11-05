@@ -6,7 +6,6 @@ const getDOM = selector => () => {
 
 document.title = `${data.name} | ${data.role}`
 
-// Values DOM nodes
 const dom = {
   data: {
     name: getDOM('#main #name'),
@@ -21,8 +20,6 @@ const dom = {
 };
 
 function assignDOM(dom, value, options) {
-  // console.log('dom, value, img:', dom, value, img);
-
   if (options && options.isImg) {
     dom.src = value;
     return;
@@ -35,15 +32,12 @@ function assignDOM(dom, value, options) {
   dom.innerHTML = value;
 }
 
-// DATA
-
 assignDOM(dom.data.name(), data.name);
 assignDOM(dom.data.mail(), data.mail);
 dom.data.mail().href = `mailto:${data.mail}?Subject=Hello%20Ivan!`;
 assignDOM(dom.data.img(), data.img, { isImg: true });
 assignDOM(dom.data.role(), data.role);
 
-// External Links (ICONS)
 const connectsDOM = data.connects
   .map(
     ({ name, iconName, link }) =>
@@ -52,7 +46,6 @@ const connectsDOM = data.connects
   .join('\n');
 assignDOM(dom.data.connects(), connectsDOM);
 
-// Internal Links
 const getLinks = links =>
   links
     .map(({ name, link }) => `<a href="${link}" class="text-pink-500" >${name}</a>`)
